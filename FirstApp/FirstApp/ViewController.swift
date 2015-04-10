@@ -9,6 +9,55 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        originScale.resignFirstResponder()
+        finalScale.resignFirstResponder()
+        originDate.resignFirstResponder()
+    }
+    
+    @IBAction func Sure(sender: AnyObject) {
+        //when user did all input,tap this button to compute the result
+        originScale.resignFirstResponder()
+        finalScale.resignFirstResponder()
+        originDate.resignFirstResponder()
+        var origin = originScale.text.toInt()
+        if(origin < 2 || origin > 36){
+            var alert = UIAlertView()
+            alert.title = "警告！"
+            alert.message = "请输入原进制"
+            alert.addButtonWithTitle("OK")
+            alert.show()
+        }
+        var final = finalScale.text.toInt()
+        if(final < 2 || final > 36){
+            var alert = UIAlertView()
+            alert.title = "警告！"
+            alert.message = "请输入目的进制"
+            alert.addButtonWithTitle("OK")
+            alert.show()
+        }
+        var date = originDate.text.toInt()
+        
+//        if(){
+//            var alert = UIAlertView()
+//            alert.title = "警告！"
+//            alert.message = "请输入原数据"
+//            alert.addButtonWithTitle("OK")
+//            alert.show()
+//        }
+    }
+    
+    @IBOutlet weak var originScale: UITextField! = nil
+    
+    @IBOutlet weak var originDate: UITextField!
+    
+    @IBOutlet weak var finalScale: UITextField!
+    
+    @IBOutlet weak var finalDate: UITextField!
+    
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +68,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 
