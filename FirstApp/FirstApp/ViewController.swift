@@ -28,27 +28,39 @@ class ViewController: UIViewController {
             alert.message = "请输入原进制"
             alert.addButtonWithTitle("OK")
             alert.show()
-        }
-        var final = finalScale.text.toInt()
-        if(final < 2 || final > 36){
-            var alert = UIAlertView()
-            alert.title = "警告！"
-            alert.message = "请输入目的进制"
-            alert.addButtonWithTitle("OK")
-            alert.show()
-        }
-        var date = originDate.text.toInt()
+        }//if origin scale
+        else{
+            var final = finalScale.text.toInt()
+            if(final < 2 || final > 36){
+                var alert = UIAlertView()
+                alert.title = "警告！"
+                alert.message = "请输入目的进制"
+                alert.addButtonWithTitle("OK")
+                alert.show()
+            }//if final scale
+            else{
+                
+                var date = originDate.text.toInt()
+                var a:Int64
+                for(var i = 0;date == 0;i++){
+                    
+                }
+                
+                
+//                if(){
+//                     var alert = UIAlertView()
+//                     alert.title = "警告！"
+//                     alert.message = "请输入原数据"
+//                     alert.addButtonWithTitle("OK")
+//                     alert.show()
+//                }
+            }//if final scale else
+            
+        }//if origin scale else
         
-//        if(){
-//            var alert = UIAlertView()
-//            alert.title = "警告！"
-//            alert.message = "请输入原数据"
-//            alert.addButtonWithTitle("OK")
-//            alert.show()
-//        }
-    }
+    }//method Sure
     
-    @IBOutlet weak var originScale: UITextField! = nil
+    @IBOutlet weak var originScale: UITextField!
     
     @IBOutlet weak var originDate: UITextField!
     
